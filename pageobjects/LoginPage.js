@@ -5,13 +5,13 @@ class LoginPage {
         this.password =page.locator("#password");
         this.login =page.locator("#login-button");
     }
+
     async goto() {
         await this.page.goto('https://www.saucedemo.com');
       }
     async enterUsernameAndPassword(username,password){
         await this.userName.fill(username);
         await this.password.fill(password);
-
 
     }
 

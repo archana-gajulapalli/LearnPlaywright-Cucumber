@@ -1,12 +1,11 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { chromium } = require('playwright');
-const LoginPage = require('../pageobjects/LoginPage');
+const LoginPage = require('../../pageobjects/LoginPage');
 const assert = require('assert');
-
 let browser, page, loginPage;
 
 Given('I open the login page', async function () {
-    browser = await chromium.launch({headless:false});
+  browser = await chromium.launch({headless:false});
   page = await browser.newPage();
   loginPage = new LoginPage(page);
   await loginPage.goto();

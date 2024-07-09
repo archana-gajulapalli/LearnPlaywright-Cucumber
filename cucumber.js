@@ -1,6 +1,6 @@
 module.exports = {
     default: {
-      require: ['step_definitions/**/*.js'],
+      require: ['features/step_definitions/**/*.js'],
       format: ['progress'],
     },
   };
