@@ -1,10 +1,11 @@
 Feature: homepage validation
-
+Background: Login sucessfully
+    @smoke
     Scenario: login to home page
-    Given I open the login page
-    And login to application with "standard_user" and "secret_sauce"
-    When I click on login button
-    Then I should view the homepage title "Swag Labs"
+    Given I am on login page
+    When login to application with "standard_user" and "secret_sauce"
+    And I click on login button
+    Then I verify the homepage title as "Swag Labs"
 
 
 

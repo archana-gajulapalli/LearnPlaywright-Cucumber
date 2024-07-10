@@ -2,12 +2,10 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const { chromium } = require('playwright');
 const LoginPage = require('../../pageobjects/LoginPage');
 const assert = require('assert');
-let browser, page, loginPage;
+let loginPage;
 
-Given('I open the login page', async function () {
-  browser = await chromium.launch({headless:false});
-  page = await browser.newPage();
-  loginPage = new LoginPage(page);
+Given('I am on login page', async function () {
+  loginPage = new LoginPage(this.page);
   await loginPage.goto();
 });
 
@@ -20,8 +18,8 @@ Given('I open the login page', async function () {
  
   });
 
-  Then('I should view the homepage title {string}', async function (expectedTitle) {
-    const title = await page.title();
+  Then('I verify the homepage title as {string}', async function (expectedTitle) {
+    const title = await this.page.title();
   assert.strictEqual(title,expectedTitle );
-  await browser.close();
+  
   });

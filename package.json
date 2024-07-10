@@ -4,16 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "cucumber-js"
-},
+    "test:dev:chromium": "cross-env NODE_ENV=development BROWSER=chromium cucumber-js --tags @smoke",
+    "test:dev:firefox": "cross-env NODE_ENV=development BROWSER=firefox cucumber-js",
+    "test:dev:webkit": "cross-env NODE_ENV=development BROWSER=webkit cucumber-js",
+    "test:prod:chromium": "cross-env NODE_ENV=production BROWSER=chromium cucumber-js",
+    "test:prod:firefox": "cross-env NODE_ENV=production BROWSER=firefox cucumber-js",
+    "test:prod:webkit": "cross-env NODE_ENV=production BROWSER=webkit cucumber-js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.45.1",
-    "@types/node": "^20.14.10"
+    "@types/node": "^20.14.10",
+    "chai": "^5.1.1",
+    "chai-as-promised": "^8.0.0",
+    "dotenv": "^16.4.5"
   },
   "dependencies": {
-    "@cucumber/cucumber": "^10.8.0"
+    "@cucumber/cucumber": "^10.8.0",
+    "cross-env": "^7.0.3"
   }
 }

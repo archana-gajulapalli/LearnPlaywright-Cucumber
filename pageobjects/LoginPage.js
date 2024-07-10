@@ -7,7 +7,7 @@ class LoginPage {
     }
 
     async goto() {
-        await this.page.goto('https://www.saucedemo.com');
+      await this.page.goto(process.env.BASE_URL);
       }
     async enterUsernameAndPassword(username,password){
         await this.userName.fill(username);
