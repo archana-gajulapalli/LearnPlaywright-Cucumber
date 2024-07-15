@@ -1,9 +1,10 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const { chromium } = require('playwright');
-const LoginPage = require('../../pageobjects/LoginPage');
-const assert = require('assert');
-let loginPage;
+import { Given, When, Then } from '@cucumber/cucumber';
+import { expect } from 'chai';
+import { chromium } from 'playwright';
+import {LoginPage} from '../pageobjects/LoginPage.js';
 
+
+let loginPage;
 Given('I am on login page', async function () {
   loginPage = new LoginPage(this.page);
   await loginPage.goto();
@@ -20,6 +21,6 @@ Given('I am on login page', async function () {
 
   Then('I verify the homepage title as {string}', async function (expectedTitle) {
     const title = await this.page.title();
-  assert.strictEqual(title,expectedTitle );
+    expect(title).to.equal(expectedTitle);
   
   });

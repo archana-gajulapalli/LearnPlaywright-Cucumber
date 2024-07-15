@@ -1,6 +1,7 @@
-const { Before, After, BeforeAll, AfterAll } = require('@cucumber/cucumber');
-const { chromium, firefox, webkit } = require('playwright');
-const dotenv = require('dotenv');
+import { Before, After, BeforeAll, AfterAll } from '@cucumber/cucumber';
+import { chromium, firefox, webkit } from 'playwright';
+import dotenv from 'dotenv';
+
 
 // Load environment variables from .env file based on the NODE_ENV
 const environment = process.env.NODE_ENV || 'development';

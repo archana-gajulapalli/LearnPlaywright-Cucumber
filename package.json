@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test:dev:chromium": "cross-env NODE_ENV=development BROWSER=chromium cucumber-js --tags @smoke",
     "test:dev:firefox": "cross-env NODE_ENV=development BROWSER=firefox cucumber-js",
